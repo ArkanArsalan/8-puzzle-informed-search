@@ -38,7 +38,7 @@ class Puzzle:
 
     def wrong_placement(self):
         self.heuristic = 0
-        for num in range(1,9):
+        for num in range(1,8):
             if (num != self.state.index(num - 1)) :
                 self.heuristic += 1
 
