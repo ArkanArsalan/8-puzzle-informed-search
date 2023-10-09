@@ -12,19 +12,19 @@ initial_state =[[7, 2, 4,
 Puzzle.num_of_instances = 0
 time_start = time()
 astar_path = astar(initial_state [0])
-time_end = time() - time_start
+time_delta = time() - time_start
 print('A*:',astar_path)
 print('space:', Puzzle.num_of_instances)
-print('time:', time_end)
+print('time:', time_delta)
 print()
 
 Puzzle.num_of_instances = 0
 time_start = time()
 gbfs_path = gbfs(initial_state [0])
-time_end = time() - time_start
+time_delta = time() - time_start
 print('GBFS:',gbfs_path)
 print('space:', Puzzle.num_of_instances)
-print('time:', time_end)
+print('time:', time_delta)
 print()
 
 
