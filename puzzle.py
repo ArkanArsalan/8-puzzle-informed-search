@@ -17,7 +17,7 @@ class Puzzle:
             self.path_cost = path_cost
 
         # Heuristic function
-        self.heuristic_function()
+        self.manhattan_distance()
 
         # Evaluation_function = heuristic function + path cost 
         self.evaluation_function = self.heuristic+self.path_cost
@@ -28,13 +28,20 @@ class Puzzle:
         return str(self.state[0:3])+'\n'+str(self.state[3:6])+'\n'+str(self.state[6:9])
     
     # Heuristic function (manhattan distance)
-    def heuristic_function(self):
+    def manhattan_distance(self):
         self.heuristic = 0
         for num in range(1,9):
             distance = abs(self.state.index(num) - self.goal_state.index(num))
             i = int(distance/3)
             j = int(distance%3)
             self.heuristic = self.heuristic+i+j
+
+    def wrong_placement(self):
+        self.heuristic = 0
+        for num in range(1,9):
+            if (num != self.state.index(num - 1)) :
+                self.heuristic += 1
+
 
     # Test current state to goal state
     def goal_test(self):
